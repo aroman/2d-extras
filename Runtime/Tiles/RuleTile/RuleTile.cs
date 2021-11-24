@@ -398,6 +398,9 @@ namespace UnityEngine
             tileData.colliderType = m_DefaultColliderType;
             tileData.flags = TileFlags.LockTransform;
             tileData.transform = iden;
+            // Workaround for https://github.com/Unity-Technologies/2d-extras/issues/324
+            // https://forum.unity.com/threads/2021-2-0f1-tilemap-settiles-not-working-as-previous.1190572/#post-7624684
+            tileData.color = Color.white;
 
             foreach (TilingRule rule in m_TilingRules)
             {
